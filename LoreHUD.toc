@@ -1,0 +1,9 @@
+## Interface: 30300
+## Title: |cFFFFD700LoreHUD|r — Theramore Living World
+## Notes: Subtitulos cinematograficos y HUD de estado para los LoreBots de WoW Peru
+## Author: DarckRovert (Elnazzareno) & Antigravity L9
+## Version: 1.0.0
+## DefaultState: enabled
+## SavedVariables: LoreHUDDB
+
+LoreHUD.lua
