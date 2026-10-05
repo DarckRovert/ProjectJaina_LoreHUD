@@ -240,6 +240,7 @@ end
 -- Rastreador de Nameplate o Target en 3D
 local activeSpeaker = nil
 local bubbleThrottle = 0
+local currentMasterAlpha = 0
 local bubbleUpdateFrame = CreateFrame("Frame")
 bubbleUpdateFrame:SetScript("OnUpdate", function(self, elapsed)
     if not activeSpeaker then
@@ -256,7 +257,7 @@ bubbleUpdateFrame:SetScript("OnUpdate", function(self, elapsed)
     if foundPlate and foundPlate:IsShown() then
         headBubble:ClearAllPoints()
         headBubble:SetPoint("BOTTOM", foundPlate, "TOP", 0, 14)
-        headBubble:SetAlpha(1)
+        headBubble:SetAlpha(currentMasterAlpha)
         headBubble:Show()
         bubbleTail:Show()
         return
@@ -266,7 +267,7 @@ bubbleUpdateFrame:SetScript("OnUpdate", function(self, elapsed)
     if UnitExists("target") and IsSpeakerMatch(UnitName("target"), activeSpeaker) then
         headBubble:ClearAllPoints()
         headBubble:SetPoint("BOTTOM", TargetFrame, "TOP", 0, 12)
-        headBubble:SetAlpha(0.95)
+        headBubble:SetAlpha(currentMasterAlpha * 0.95)
         headBubble:Show()
         bubbleTail:Hide()
         return
@@ -383,11 +384,13 @@ local function ProcessSubtitleQueue()
     subtitleBG:SetAlpha(0)
     subtitleBG:Show()
     headBubble:SetAlpha(0)
+    currentMasterAlpha = 0
     
     local fadeInStart = GetTime()
     animFrame:SetScript("OnUpdate", function(self, el)
         local p = math.min((GetTime() - fadeInStart) / 0.20, 1)
         subtitleBG:SetAlpha(p)
+        currentMasterAlpha = p
         headBubble:SetAlpha(p)
         if p >= 1 then
             self:SetScript("OnUpdate", nil)
@@ -406,13 +409,17 @@ local function ProcessSubtitleQueue()
         local fadeOutStart = GetTime()
         animFrame:SetScript("OnUpdate", function(self, el)
             local p = math.min((GetTime() - fadeOutStart) / 0.30, 1)
-            subtitleBG:SetAlpha(1 - p)
-            headBubble:SetAlpha(1 - p)
+            local invP = 1 - p
+            subtitleBG:SetAlpha(invP)
+            currentMasterAlpha = invP
+            headBubble:SetAlpha(invP)
             if p >= 1 then
                 self:SetScript("OnUpdate", nil)
                 subtitleBG:Hide()
                 headBubble:Hide()
                 activeSpeaker = nil
+                currentMasterAlpha = 0
+                subtitleActive = false
                 TimerAfter(0.1, ProcessSubtitleQueue)
             end
         end)
@@ -697,7 +704,12 @@ SlashCmdList["LOREHUD"] = function(msg)
         jainaPanel:Hide()
         subtitleBG:Hide()
         headBubble:Hide()
-        print("|cFFFFD700[LoreHUD]|r Interfaz oculta.")
+        animFrame:SetScript("OnUpdate", nil)
+        subtitleActive = false
+        activeSpeaker = nil
+        currentMasterAlpha = 0
+        for i = #subtitleQueue, 1, -1 do subtitleQueue[i] = nil end
+        print("|cFFFFD700[LoreHUD]|r Interfaz oculta y cola purgada.")
     elseif cmd == "show" then
         jainaPanel:Show()
         print("|cFFFFD700[LoreHUD]|r Interfaz restaurada.")
