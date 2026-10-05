@@ -30,11 +30,18 @@ AddOn de subtítulos cinematográficos y HUD de estado narrativo para los **Lore
 
 - `LoreHUDDB` — Configuración global del addon.
 
-## Créditos
+## Créditos y Licencia
 
 - **Autor:** DarckRovert (Elnazzareno) & Antigravity L9
 - **Versión:** 1.0.0
-- **Licencia:** Uso exclusivo WoW Perú
+- **Licencia:** [MIT License](LICENSE)
+
+---
+
+## Documentación del Ecosistema
+
+* [Ficha Técnica Oficial del Ecosistema](ECOSYSTEM_REGISTRY.md)
+* [Historial de Cambios](CHANGELOG.md)
 
 ---
 
