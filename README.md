@@ -2,6 +2,8 @@
 
 > **WoW Perú Ecosystem** · WotLK 3.3.5a compatible · `Interface: 30300`
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 AddOn de subtítulos cinematográficos y HUD de estado narrativo para los **LoreBots** del servidor WoW Perú. Presenta diálogos en pantalla al interactuar con personajes lore (Jaina, Arthas, etc.) y muestra un HUD de estado ambiental que refuerza la inmersión en la historia.
 
 ---
