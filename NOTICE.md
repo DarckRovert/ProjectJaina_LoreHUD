@@ -1,14 +1,14 @@
-# 📜 Aviso Legal y Atribución — WoWPeru_LoreHUD
+# 📜 Aviso Legal y Atribución — Wanos_LoreHUD
 
-Este repositorio forma parte del ecosistema oficial de **WoW Perú - Reino Andino**.
+Este repositorio forma parte del ecosistema oficial de **Project Jaina - Project Jaina**.
 Contiene el sistema de subtítulos cinematográficos y visualización narrativa para LoreBots en World of Warcraft 3.3.5a (Build 12340).
 
 ---
 
 ## 1. Autoría y Desarrollo Oficial
-* **Desarrollador Principal:** DarckRovert & WoW Perú Team
-* **Ecosistema:** [WoW Perú — Reino Andino](https://wow-peru.lat/)
-* **Repositorio Oficial:** [DarckRovert/WoWPeru_LoreHUD](https://github.com/DarckRovert/WoWPeru_LoreHUD)
+* **Desarrollador Principal:** DarckRovert & Project Jaina Team
+* **Ecosistema:** [Project Jaina — Project Jaina](https://worldofwanos.com/)
+* **Repositorio Oficial:** [DarckRovert/Wanos_LoreHUD](https://github.com/DarckRovert/Wanos_LoreHUD)
 
 ---
 

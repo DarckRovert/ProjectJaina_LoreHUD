@@ -1,6 +1,6 @@
 -- =======================================================================
 -- LOREHUD v2.0 — Subtitulos Cinematograficos, Burbujas 3D y Estado de Jaina
--- Proyecto: WoW Peru — Reino Andino (WotLK 3.3.5a)
+-- Proyecto: Project Jaina — Project Jaina (WotLK 3.3.5a)
 -- Autores: Darckrovert & Antigravity L9 (Mythos 5)
 -- 100% Compatible con WoW 3.3.5a (Sin C_Timer, puro OnUpdate de alta eficiencia)
 -- =======================================================================
@@ -322,11 +322,11 @@ iconBorder:SetTexture("Interface\\Buttons\\UI-ActionButton-Border")
 iconBorder:SetBlendMode("ADD")
 iconBorder:SetVertexColor(1, 0.84, 0, 0.8)
 
--- Emblema Oficial WoW Perú en Lower-Third
+-- Emblema Oficial Project Jaina en Lower-Third
 local cineLogo = subtitleBG:CreateTexture(nil, "ARTWORK")
 cineLogo:SetSize(48, 24)
 cineLogo:SetPoint("RIGHT", subtitleBG, "RIGHT", -12, 0)
-cineLogo:SetTexture("Interface\\AddOns\\LoreHUD\\Textures\\wowperu_logo.tga")
+cineLogo:SetTexture("Interface\\AddOns\\Jaina_LoreHUD\\Textures\\jaina_logo.tga")
 cineLogo:SetAlpha(0.45)
 
 -- Nombre y rol
@@ -495,11 +495,11 @@ panelTitle:SetFont("Fonts\\FRIZQT__.TTF", 10, "OUTLINE")
 panelTitle:SetTextColor(0.43, 0.67, 1, 1)
 panelTitle:SetText("Lady Jaina Proudmoore")
 
--- Emblema Oficial WoW Perú en Panel de Estado
+-- Emblema Oficial Project Jaina en Panel de Estado
 local peruLogo = jainaPanel:CreateTexture(nil, "ARTWORK")
 peruLogo:SetSize(38, 19)
 peruLogo:SetPoint("TOPRIGHT", jainaPanel, "TOPRIGHT", -6, -4)
-peruLogo:SetTexture("Interface\\AddOns\\LoreHUD\\Textures\\wowperu_logo.tga")
+peruLogo:SetTexture("Interface\\AddOns\\Jaina_LoreHUD\\Textures\\jaina_logo.tga")
 peruLogo:SetAlpha(0.7)
 
 local panelMood = jainaPanel:CreateFontString(nil, "OVERLAY")
@@ -559,6 +559,43 @@ eventDesc:SetPoint("TOP", eventBanner, "TOP", 0, -32)
 eventDesc:SetFont("Fonts\\FRIZQT__.TTF", 10, "")
 eventDesc:SetTextColor(0.9, 0.9, 0.9, 1)
 
+local function PlayBannerAnimation(holdDuration)
+    eventBanner.animState = "IN"
+    eventBanner.animAlpha = 0
+    eventBanner.animHold = holdDuration or 6.0
+    eventBanner.animElapsed = 0
+    eventBanner:SetAlpha(0)
+    eventBanner:Show()
+
+    eventBanner:SetScript("OnUpdate", function(self, elapsed)
+        if self.animState == "IN" then
+            self.animAlpha = self.animAlpha + elapsed * 2
+            if self.animAlpha >= 1 then
+                self.animAlpha = 1
+                self.animState = "HOLD"
+                self.animElapsed = 0
+            end
+            self:SetAlpha(self.animAlpha)
+        elseif self.animState == "HOLD" then
+            self.animElapsed = self.animElapsed + elapsed
+            if self.animElapsed >= self.animHold then
+                self.animState = "OUT"
+            end
+        elseif self.animState == "OUT" then
+            self.animAlpha = self.animAlpha - elapsed * 1.5
+            if self.animAlpha <= 0 then
+                self.animAlpha = 0
+                self:SetAlpha(0)
+                self:Hide()
+                self.animState = "IDLE"
+                self:SetScript("OnUpdate", nil)
+            else
+                self:SetAlpha(self.animAlpha)
+            end
+        end
+    end)
+end
+
 local function ShowEventBanner(eventName, duration, desc)
     local titleText = "¡ALERTA EN THERAMORE!"
     local colorR, colorG, colorB = 1, 0.3, 0.3
@@ -573,33 +610,7 @@ local function ShowEventBanner(eventName, duration, desc)
     eventTitle:SetText(titleText)
     eventDesc:SetText(desc or "Evento en curso")
     pcall(function() PlaySound("RaidWarning") end)
-    eventBanner:SetAlpha(0)
-    eventBanner:Show()
-
-    local alpha = 0
-    local fader = CreateFrame("Frame")
-    fader:SetScript("OnUpdate", function(self, elapsed)
-        alpha = alpha + elapsed * 2
-        if alpha >= 1 then
-            alpha = 1
-            self:SetScript("OnUpdate", nil)
-        end
-        eventBanner:SetAlpha(alpha)
-    end)
-
-    TimerAfter(6.0, function()
-        local outAlpha = 1
-        local outFader = CreateFrame("Frame")
-        outFader:SetScript("OnUpdate", function(self, elapsed)
-            outAlpha = outAlpha - elapsed * 1.5
-            if outAlpha <= 0 then
-                outAlpha = 0
-                eventBanner:Hide()
-                self:SetScript("OnUpdate", nil)
-            end
-            eventBanner:SetAlpha(outAlpha)
-        end)
-    end)
+    PlayBannerAnimation(6.0)
 end
 
 local function ShowExpeditionBanner(expKey, district, duration)
@@ -633,33 +644,7 @@ local function ShowExpeditionBanner(expKey, district, duration)
     eventTitle:SetText(titleText)
     eventDesc:SetText(descText)
     pcall(function() PlaySound("QUESTCOMPLETED") end)
-    eventBanner:SetAlpha(0)
-    eventBanner:Show()
-
-    local alpha = 0
-    local fader = CreateFrame("Frame")
-    fader:SetScript("OnUpdate", function(self, elapsed)
-        alpha = alpha + elapsed * 2
-        if alpha >= 1 then
-            alpha = 1
-            self:SetScript("OnUpdate", nil)
-        end
-        eventBanner:SetAlpha(alpha)
-    end)
-
-    TimerAfter(7.0, function()
-        local outAlpha = 1
-        local outFader = CreateFrame("Frame")
-        outFader:SetScript("OnUpdate", function(self, elapsed)
-            outAlpha = outAlpha - elapsed * 1.5
-            if outAlpha <= 0 then
-                outAlpha = 0
-                eventBanner:Hide()
-                self:SetScript("OnUpdate", nil)
-            end
-            eventBanner:SetAlpha(outAlpha)
-        end)
-    end)
+    PlayBannerAnimation(7.0)
 end
 
 -- Listener de Addon Messages ("LOREWOW") y Handshake
