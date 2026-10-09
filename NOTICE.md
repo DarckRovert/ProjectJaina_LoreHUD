@@ -7,7 +7,7 @@ Contiene el sistema de subtítulos cinematográficos y visualización narrativa 
 
 ## 1. Autoría y Desarrollo Oficial
 * **Desarrollador Principal:** DarckRovert & Project Jaina Team
-* **Ecosistema:** [Project Jaina — Project Jaina](https://worldofwanos.com/)
+* **Ecosistema:** [Project Jaina — Project Jaina](https://projectjaina.com/)
 * **Repositorio Oficial:** [DarckRovert/Wanos_LoreHUD](https://github.com/DarckRovert/Wanos_LoreHUD)
 
 ---

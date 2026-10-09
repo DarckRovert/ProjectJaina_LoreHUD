@@ -1,7 +1,7 @@
 # 🔌 Especificación Técnica y API — Wanos_LoreHUD
 
 [![GitHub](https://img.shields.io/badge/GitHub-DarckRovert%2FWanos_LoreHUD-black?logo=github)](https://github.com/DarckRovert/Wanos_LoreHUD)
-[![Ecosistema](https://img.shields.io/badge/Ecosistema-WoW%20Per%C3%BA%203.3.5a-gold.svg)](https://worldofwanos.com/)
+[![Ecosistema](https://img.shields.io/badge/Ecosistema-WoW%20Per%C3%BA%203.3.5a-gold.svg)](https://projectjaina.com/)
 
 ## 📌 Resumen Arquitectónico
 HUD inmersivo de diálogos cinemáticos y burbujas narrativas 3D sincronizado con el motor LoreEngine y los LoreBots del servidor (Jaina Proudmoore en Theramore).
