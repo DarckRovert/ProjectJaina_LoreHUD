@@ -1,4 +1,4 @@
-# 📜 Aviso Legal y Atribución — Wanos_LoreHUD
+# 📜 Aviso Legal y Atribución — ProjectJaina_LoreHUD
 
 Este repositorio forma parte del ecosistema oficial de **Project Jaina - Project Jaina**.
 Contiene el sistema de subtítulos cinematográficos y visualización narrativa para LoreBots en World of Warcraft 3.3.5a (Build 12340).
@@ -6,9 +6,9 @@ Contiene el sistema de subtítulos cinematográficos y visualización narrativa 
 ---
 
 ## 1. Autoría y Desarrollo Oficial
-* **Desarrollador Principal:** DarckRovert & Project Jaina Team
-* **Ecosistema:** [Project Jaina — Project Jaina](https://projectjaina.com/)
-* **Repositorio Oficial:** [DarckRovert/Wanos_LoreHUD](https://github.com/DarckRovert/Wanos_LoreHUD)
+* **Desarrollador Principal:** DarckRovert & Antigravity (Mythos 5)
+* **Ecosistema:** [Project Jaina — Project Jaina](https://darckrovert.github.io/ProjectJaina_Web/)
+* **Repositorio Oficial:** [DarckRovert/ProjectJaina_LoreHUD](https://github.com/DarckRovert/ProjectJaina_LoreHUD)
 
 ---
 

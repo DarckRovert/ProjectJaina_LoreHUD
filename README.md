@@ -1,6 +1,6 @@
 # LoreHUD — Theramore Living World
 
-[![GitHub](https://img.shields.io/badge/GitHub-DarckRovert%2FWanos_LoreHUD-black?logo=github)](https://github.com/DarckRovert/Wanos_LoreHUD)
+[![GitHub](https://img.shields.io/badge/GitHub-DarckRovert%2FProjectJaina_LoreHUD-black?logo=github)](https://github.com/DarckRovert/ProjectJaina_LoreHUD)
 
 > **Project Jaina Ecosystem** · WotLK 3.3.5a compatible · `Interface: 30300`
 

@@ -1,4 +1,4 @@
-# Registro de Cambios — Wanos_LoreHUD
+# Registro de Cambios — ProjectJaina_LoreHUD
 
 Todos los cambios notables de este proyecto están documentados en este archivo siguiendo el estándar [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/).
 
@@ -7,7 +7,7 @@ Todos los cambios notables de este proyecto están documentados en este archivo 
 ## [1.0.0-wp] — 2026-10-05
 ### Correcciones de Animación y Gobernanza (Project Jaina)
 - **Desacoplamiento de Alpha Maestro:** Modificado el ciclo de animación de subtítulos para desacoplar el alpha maestro del frame principal, eliminando el parpadeo visual en burbujas de chat y previniendo deadlocks en la cola de diálogos cinematográficos.
-- **Licencia Canónica:** Adición formal de la licencia MIT ([LICENSE](LICENSE)) bajo titularidad de DarckRovert & Project Jaina Team.
+- **Licencia Canónica:** Adición formal de la licencia MIT ([LICENSE](LICENSE)) bajo titularidad de DarckRovert & Antigravity (Mythos 5).
 - **Higiene Documental:** Creación de `CHANGELOG.md`, `ECOSYSTEM_REGISTRY.md` y `.gitattributes`.
 
 ---

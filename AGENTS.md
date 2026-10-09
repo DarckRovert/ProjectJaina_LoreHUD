@@ -1,7 +1,7 @@
-# 🤖 Directrices de Ingeniería y Restricciones para Agentes IA — Wanos_LoreHUD
+# 🤖 Directrices de Ingeniería y Restricciones para Agentes IA — ProjectJaina_LoreHUD
 
-**Addon:** `Wanos_LoreHUD`  
-**Repositorio Oficial:** [https://github.com/DarckRovert/Wanos_LoreHUD](https://github.com/DarckRovert/Wanos_LoreHUD)  
+**Addon:** `ProjectJaina_LoreHUD`  
+**Repositorio Oficial:** [https://github.com/DarckRovert/ProjectJaina_LoreHUD](https://github.com/DarckRovert/ProjectJaina_LoreHUD)  
 **Motor Gráfico y Runtime:** WoW 3.3.5a WotLK (Build 12340) / Lua 5.1 (Blizzard VM)
 
 ---
