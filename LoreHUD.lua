@@ -324,10 +324,11 @@ iconBorder:SetVertexColor(1, 0.84, 0, 0.8)
 
 -- Emblema Oficial Project Jaina en Lower-Third
 local cineLogo = subtitleBG:CreateTexture(nil, "ARTWORK")
-cineLogo:SetSize(48, 24)
-cineLogo:SetPoint("RIGHT", subtitleBG, "RIGHT", -12, 0)
-cineLogo:SetTexture("Interface\\AddOns\\Jaina_LoreHUD\\Textures\\jaina_logo.tga")
-cineLogo:SetAlpha(0.45)
+cineLogo:SetSize(28, 28)
+cineLogo:SetPoint("RIGHT", subtitleBG, "RIGHT", -16, 0)
+cineLogo:SetTexture("Interface\\AddOns\\ProjectJaina_LoreHUD\\Textures\\jaina_logo.tga")
+cineLogo:SetBlendMode("BLEND")
+cineLogo:SetAlpha(0.75)
 
 -- Nombre y rol
 local speakerText = subtitleBG:CreateFontString(nil, "OVERLAY", "GameFontNormal")
@@ -496,11 +497,12 @@ panelTitle:SetTextColor(0.43, 0.67, 1, 1)
 panelTitle:SetText("Lady Jaina Proudmoore")
 
 -- Emblema Oficial Project Jaina en Panel de Estado
-local peruLogo = jainaPanel:CreateTexture(nil, "ARTWORK")
-peruLogo:SetSize(38, 19)
-peruLogo:SetPoint("TOPRIGHT", jainaPanel, "TOPRIGHT", -6, -4)
-peruLogo:SetTexture("Interface\\AddOns\\Jaina_LoreHUD\\Textures\\jaina_logo.tga")
-peruLogo:SetAlpha(0.7)
+local jainaLogo = jainaPanel:CreateTexture(nil, "ARTWORK")
+jainaLogo:SetSize(22, 22)
+jainaLogo:SetPoint("TOPRIGHT", jainaPanel, "TOPRIGHT", -8, -5)
+jainaLogo:SetTexture("Interface\\AddOns\\ProjectJaina_LoreHUD\\Textures\\jaina_logo.tga")
+jainaLogo:SetBlendMode("BLEND")
+jainaLogo:SetAlpha(0.9)
 
 local panelMood = jainaPanel:CreateFontString(nil, "OVERLAY")
 panelMood:SetPoint("TOPLEFT", jainaPanel, "TOPLEFT", 8, -20)

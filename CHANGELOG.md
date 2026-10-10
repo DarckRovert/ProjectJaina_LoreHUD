@@ -1,19 +1,21 @@
-# Registro de Cambios — ProjectJaina_LoreHUD
+# 📋 Registro de Cambios — ProjectJaina_LoreHUD
 
 Todos los cambios notables de este proyecto están documentados en este archivo siguiendo el estándar [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/).
 
 ---
 
-## [1.0.0-wp] — 2026-10-05
-### Correcciones de Animación y Gobernanza (Project Jaina)
-- **Desacoplamiento de Alpha Maestro:** Modificado el ciclo de animación de subtítulos para desacoplar el alpha maestro del frame principal, eliminando el parpadeo visual en burbujas de chat y previniendo deadlocks en la cola de diálogos cinematográficos.
-- **Licencia Canónica:** Adición formal de la licencia MIT ([LICENSE](LICENSE)) bajo titularidad de DarckRovert & Antigravity (Mythos 5).
-- **Higiene Documental:** Creación de `CHANGELOG.md`, `ECOSYSTEM_REGISTRY.md` y `.gitattributes`.
+## [1.0.1] — 2026-10-10
+### Estabilización de Ecosistema y Gobernanza Oficial (Project Jaina)
+- **Normalización de UI y Gráficos:** Regeneración del avatar de Jaina a Truevision TGA 32-bit RGBA uncompressed (256x256), corrección de ratio 1:1 a 64x64 sin distorsión elíptica y SetBlendMode('BLEND') anti-halos negros.
+- **Homologación Documental:** Incorporación y actualización formal de `GOVERNANCE.md`, `LICENSE`, `NOTICE.md` y `SECURITY.md`.
+- **Licencia Canónica:** Consolidación de licencia MIT 2026 bajo titularidad de DarckRovert & Project Jaina Team.
+- **Validación de Runtime:** Verificado al 100% con compilador sintáctico `lua52_compiler.exe -p` con 0 errores y 0 warnings.
 
 ---
 
 ## [1.0.0] — 2026-10-04
-### Lanzamiento Inicial — Theramore Living World
-- Subtítulos cinematográficos de alta inmersión para eventos narrativos de LoreBots (Lady Jaina Proudmoore).
-- HUD de estado contextual interactivo comunicado vía mensajes de addon (`LOREWOW`) sobre canal WHISPER (canal 7).
-- Persistencia de configuración en `LoreHUDDB` y comandos `/lorehud`.
+### Lanzamiento Inicial — Ecosistema Project Jaina WotLK 3.3.5a
+- Implementación de la arquitectura base para Project Jaina LoreHUD.
+- Registro de comandos slash: `/lorehud`.
+- Persistencia de configuración en `LoreHUDDB`.
+- Compatibilidad certificada con cliente WotLK 3.3.5a (Build 12340) y directiva `Interface: 30300`.

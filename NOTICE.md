@@ -1,22 +1,28 @@
 # 📜 Aviso Legal y Atribución — ProjectJaina_LoreHUD
 
-Este repositorio forma parte del ecosistema oficial de **Project Jaina - Project Jaina**.
-Contiene el sistema de subtítulos cinematográficos y visualización narrativa para LoreBots en World of Warcraft 3.3.5a (Build 12340).
+Este repositorio forma parte del ecosistema oficial de **Project Jaina**.
+Contiene HUD narrativo cinemático para interacción con LoreBots (Lady Jaina Proudmoore), telemetría de afinidad, subtítulos inmersivos y audio espacial. para el cliente World of Warcraft 3.3.5a (Build 12340).
 
 ---
 
 ## 1. Autoría y Desarrollo Oficial
-* **Desarrollador Principal:** DarckRovert & Antigravity (Mythos 5)
-* **Ecosistema:** [Project Jaina — Project Jaina](https://darckrovert.github.io/ProjectJaina_Web/)
+* **Desarrollador Principal:** DarckRovert (Ingame: `Elnazzareno`) & Antigravity (Mythos 5)
+* **Ecosistema:** [Project Jaina Oficial](https://darckrovert.github.io/ProjectJaina_Web/)
 * **Repositorio Oficial:** [DarckRovert/ProjectJaina_LoreHUD](https://github.com/DarckRovert/ProjectJaina_LoreHUD)
 
 ---
 
-## 2. Inmersión Narrativa y Rendimiento
-* Proporciona marcos flotantes cinematográficos de texto enriquecido para los eventos narrativos de *Theramore Living World* y los LoreBots interactivos del servidor.
-* Optimizado para renderizado suave sin consumo excesivo de memoria en PCs de cabina.
+## 2. Arquitectura y Protocolo Autoritativo
+* **Prefijo de Red:** `LOREWOW`
+* **Integración Servidor:** `LoreBots/00b_LoreEngine_WorldState.lua, 01_LoreBot_JainaProudmoore.lua y 12_HeroBot_JainaBridge.lua`
+* **Variables Guardadas:** `LoreHUDDB`
+* **Comandos Slash:** `/lorehud`
 
 ---
 
-## 3. Licencia
-Distribuido bajo la licencia [MIT](LICENSE).
+## 3. Cumplimiento de Políticas de Interfaz (Blizzard Custom UI Policy)
+En estricto cumplimiento de la Política de Interfaz de Usuario Personalizada de Blizzard Entertainment (2009):
+1. **Gratuito y Abierto:** Este software es completamente gratuito y de código abierto para la comunidad de jugadores.
+2. **Sin Alteración de Binarios:** No realiza ingeniería inversa, inyección de código ni altera binarios del juego (`WoW.exe`).
+3. **Aislamiento FrameXML:** Respeta el aislamiento de ejecución en FrameXML y no genera taint en subsistemas protegidos de combate.
+4. **Sin Publicidad ni Cobro:** No incluye anuncios publicitarios ni solicita compensación monetaria directa para el uso de sus funciones in-game.
