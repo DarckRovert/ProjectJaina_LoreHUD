@@ -20,6 +20,11 @@ HUD inmersivo de diálogos cinemáticos y burbujas narrativas 3D sincronizado co
 ## 📡 Protocolo de Red y Eventos
 - `LOREWOW`: Prefijo registrado para sincronización de datos.
 
+### Cargas Útiles del Protocolo LOREWOW (`CHAT_MSG_ADDON`)
+- `JAINA_STATE|<Mood>|<Location>|<Activity>`: Actualización de panel HUD de Lady Jaina en Theramore.
+- `JAINA_EVENT|<Título>|<Duración>|<Descripción>`: Despliega el banner cinematográfico animado en pantalla con borde dorado y aviso sonoro (utilizado por el Galeón de los Desertores y la conquista de Baluartes de Hermandad).
+- `JAINA_EXP|<ExpKey>|<District>|<Duration>`: Misión diplomática y expedición de Lady Jaina (Ventormenta, Dalaran, Cumbre de Paz).
+
 ### Eventos del Motor 3.3.5a Gestionados
 - `PLAYER_LOGIN` / `ADDON_LOADED`: Inicialización atómica de tablas de configuración y hooks.
 - `PLAYER_ENTERING_WORLD`: Sincronización de estado tras transiciones de pantalla o mapa.
