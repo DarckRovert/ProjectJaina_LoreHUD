@@ -1,7 +1,7 @@
 # 🔌 Especificación Técnica y API — ProjectJaina_LoreHUD
 
 [![GitHub](https://img.shields.io/badge/GitHub-DarckRovert%2FProjectJaina_LoreHUD-black?logo=github)](https://github.com/DarckRovert/ProjectJaina_LoreHUD)
-[![Ecosistema](https://img.shields.io/badge/Ecosistema-WoW%20Per%C3%BA%203.3.5a-gold.svg)](https://darckrovert.github.io/ProjectJaina_Web/)
+[![Ecosistema](https://img.shields.io/badge/Ecosistema-Project%20Jaina%203.3.5a-gold.svg)](https://darckrovert.github.io/ProjectJaina_Web/)
 
 ## 📌 Resumen Arquitectónico
 HUD inmersivo de diálogos cinemáticos y burbujas narrativas 3D sincronizado con el motor LoreEngine y los LoreBots del servidor (Jaina Proudmoore en Theramore).
