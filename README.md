@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/DarckRovert/ProjectJaina_Web/main/images/project_jaina_official_logo.jpg" alt="Project JAIna Official Crest" width="180">
+</p>
+
 # LoreHUD — Theramore Living World
 
 [![GitHub](https://img.shields.io/badge/GitHub-DarckRovert%2FProjectJaina_LoreHUD-black?logo=github)](https://github.com/DarckRovert/ProjectJaina_LoreHUD)
