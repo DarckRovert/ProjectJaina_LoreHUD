@@ -4,11 +4,15 @@
 
 # LoreHUD — Theramore Living World
 
-[![GitHub](https://img.shields.io/badge/GitHub-DarckRovert%2FProjectJaina_LoreHUD-black?logo=github)](https://github.com/DarckRovert/ProjectJaina_LoreHUD)
+[![WoW Client](https://img.shields.io/badge/WoW%20Client-3.3.5a%20(Build%2012340)-blue.svg)](https://darckrovert.github.io/ProjectJaina_Web/)
+[![Engine](https://img.shields.io/badge/Engine-JainaCore%20C%2B%2B20-blue.svg)](https://github.com/DarckRovert/JainaCore_Server)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![GitHub](https://img.shields.io/badge/GitHub-DarckRovert%2FProjectJaina__LoreHUD-black?logo=github)](https://github.com/DarckRovert/ProjectJaina_LoreHUD)
+[![Ecosystem](https://img.shields.io/badge/Project%20JAIna-Sovereign-gold)](https://darckrovert.github.io/ProjectJaina_Web/)
+
 
 > **Project Jaina Ecosystem** · WotLK 3.3.5a compatible · `Interface: 30300`
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 AddOn de subtítulos cinematográficos y HUD de estado narrativo para los **LoreBots** del servidor Project Jaina. Presenta diálogos en pantalla al interactuar con personajes lore (Jaina, Arthas, etc.) y muestra un HUD de estado ambiental que refuerza la inmersión en la historia.
 
