@@ -683,11 +683,24 @@ if RegisterAddonMessagePrefix then
     RegisterAddonMessagePrefix("LOREWOW")
 end
 
--- 7. COMANDOS SLASH /lorehud
+-- 7. COMANDOS SLASH /lorehud Y API GLOBAL
+local function ToggleLoreHUD()
+    if jainaPanel:IsShown() then
+        jainaPanel:Hide()
+        print("|cFFFFD700[LoreHUD]|r Panel de estado de Jaina ocultado.")
+    else
+        jainaPanel:Show()
+        print("|cFFFFD700[LoreHUD]|r Panel de estado de Jaina visible.")
+    end
+end
+_G.ProjectJaina_LoreHUD_ToggleUI = ToggleLoreHUD
+
 SLASH_LOREHUD1 = "/lorehud"
 SlashCmdList["LOREHUD"] = function(msg)
-    local cmd = string.lower(msg or "")
-    if cmd == "hide" then
+    local cmd = string.lower(strtrim(msg or ""))
+    if cmd == "" or cmd == "toggle" then
+        ToggleLoreHUD()
+    elseif cmd == "hide" then
         jainaPanel:Hide()
         subtitleBG:Hide()
         headBubble:Hide()
@@ -707,7 +720,7 @@ SlashCmdList["LOREHUD"] = function(msg)
         ShowSubtitle("Guardia Byron", "Así se hará, Lady Jaina. Los inspectores están revisando cada cargamento de trigo y pólvora en los almacenes.")
         print("|cFFFFD700[LoreHUD]|r Diálogo de prueba de Guardia Byron emitido.")
     else
-        print("|cFFFFD700[LoreHUD]|r Comandos: /lorehud show | hide | test | testbyron")
+        print("|cFFFFD700[LoreHUD]|r Comandos: /lorehud (alternar) | show | hide | test | testbyron")
     end
 end
 
