@@ -63,7 +63,13 @@ local LORE_NPC_NAMES = {
     ["Guardia Narrisha"]      = { color = "FFAAAAAA", role = "Guardia de Theramore",  icon = "Interface\\Icons\\INV_Shield_06" },
     ["Theramore Sentry"]      = { color = "FFAAAAAA", role = "Centinela",             icon = "Interface\\Icons\\INV_Shield_06" },
     ["Centinela de Theramore"]= { color = "FFAAAAAA", role = "Centinela",             icon = "Interface\\Icons\\INV_Shield_06" },
-    -- Soberanos y Aliados de Lore en Expediciones Multi-Mapa
+    -- Soberanos y Aliados de Lore en Expediciones Multi-Mapa (HeroBots y NPCs)
+    ["Jaina"]                 = { color = "FF69B4FF", role = "Señora de Theramore",   icon = "Interface\\Icons\\Spell_Frost_FrostBolt02" },
+    ["Varian"]                = { color = "FF3399FF", role = "Rey de Ventormenta",    icon = "Interface\\Icons\\INV_Crown_02" },
+    ["Thrall"]                = { color = "FFFF4422", role = "Jefe de Guerra",        icon = "Interface\\Icons\\Spell_Nature_BloodLust" },
+    ["Sylvanas"]              = { color = "FFCC33FF", role = "Reina Alma en Pena",    icon = "Interface\\Icons\\Spell_Shadow_DarkSummoning" },
+    ["Lady Sylvanas Windrunner"] = { color = "FFCC33FF", role = "Reina Alma en Pena", icon = "Interface\\Icons\\Spell_Shadow_DarkSummoning" },
+    ["Dama Sylvanas Brisaveloz"] = { color = "FFCC33FF", role = "Reina Alma en Pena", icon = "Interface\\Icons\\Spell_Shadow_DarkSummoning" },
     ["King Varian Wrynn"]     = { color = "FF3399FF", role = "Rey de Ventormenta",    icon = "Interface\\Icons\\INV_Crown_02" },
     ["Rey Varian Wrynn"]      = { color = "FF3399FF", role = "Rey de Ventormenta",    icon = "Interface\\Icons\\INV_Crown_02" },
     ["Archmage Rhonin"]       = { color = "FFB366FF", role = "Líder del Kirin Tor",   icon = "Interface\\Icons\\Spell_Holy_MagicalSentry" },
@@ -178,6 +184,9 @@ local function IsSpeakerMatch(targetStr, speakerStr)
     if string.find(a, b, 1, true) or string.find(b, a, 1, true) then return true end
     
     if string.find(a, "jaina") and string.find(b, "jaina") then return true end
+    if string.find(a, "varian") and string.find(b, "varian") then return true end
+    if string.find(a, "thrall") and string.find(b, "thrall") then return true end
+    if string.find(a, "sylvanas") and string.find(b, "sylvanas") then return true end
     if string.find(a, "byron") and string.find(b, "byron") then return true end
     if string.find(a, "aden") and string.find(b, "aden") then return true end
     if string.find(a, "thomas") and string.find(b, "thomas") then return true end
@@ -442,15 +451,33 @@ local function ShowSubtitle(speaker, text)
     end
 end
 
--- 5. LISTENER DE EVENTOS DE CHAT (MONSTER SAY / YELL)
+-- 5. LISTENER DE EVENTOS DE CHAT (MONSTER / JUGADOR / GRUPO)
 local chatListener = CreateFrame("Frame", "LoreHUDChatListener")
 chatListener:RegisterEvent("CHAT_MSG_MONSTER_SAY")
 chatListener:RegisterEvent("CHAT_MSG_MONSTER_YELL")
+chatListener:RegisterEvent("CHAT_MSG_SAY")
+chatListener:RegisterEvent("CHAT_MSG_YELL")
+chatListener:RegisterEvent("CHAT_MSG_PARTY")
+chatListener:RegisterEvent("CHAT_MSG_PARTY_LEADER")
+
 chatListener:SetScript("OnEvent", function(self, event, msg, sender, ...)
     local message = msg or arg1
     local speaker = sender or arg2
-    if speaker and (LORE_NPC_NAMES[speaker] or string.find(speaker, "Jaina")) then
-        ShowSubtitle(speaker, message)
+    if not speaker or not message or message == "" then return end
+
+    -- Ignorar mensajes del propio jugador humano (evitar auto-subtítulos en /say o /p)
+    local playerName = UnitName("player")
+    if playerName and speaker == playerName then return end
+
+    -- Limpiar posibles sufijos de reino
+    local cleanSpeaker = string.match(speaker, "^([^-]+)") or speaker
+
+    if LORE_NPC_NAMES[cleanSpeaker] or 
+       string.find(cleanSpeaker, "Jaina") or 
+       string.find(cleanSpeaker, "Varian") or 
+       string.find(cleanSpeaker, "Thrall") or 
+       string.find(cleanSpeaker, "Sylvanas") then
+        ShowSubtitle(cleanSpeaker, message)
     end
 end)
 
